@@ -15,7 +15,8 @@ public class Goal : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        rgb2d.velocity = new Vector2(Mathf.Sin(Time.time / 3), 0.0f);
+        rgb2d.velocity = new Vector2(1.8f * Mathf.Cos(Time.time/3), 0.0f);
+        rgb2d.velocity.Normalize();
 	
 	}
 

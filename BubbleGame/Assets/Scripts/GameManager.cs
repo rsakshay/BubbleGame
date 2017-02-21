@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
 
     private static GameManager instance = null;
     public static GameManager Instance { get { return instance; } }
 
+    public GameObject NoFood;
+    public int foodObjectsOnScreen;
+    public int foodOnScreenLimit;
     public GameObject BubblePrefab;
     public GameObject startScreen;
     public GameObject endGameScreen;
@@ -41,6 +45,15 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (foodObjectsOnScreen >= foodOnScreenLimit)
+        {
+            NoFood.SetActive(true);
+        }
+        else
+        {
+            NoFood.SetActive(false);
+        }
 
         if(gameStarted)
         {

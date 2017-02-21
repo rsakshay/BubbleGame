@@ -18,6 +18,7 @@ public class Food : MonoBehaviour {
     void OnBecameInvisible()
     {
         Destroy(gameObject);
+        GameManager.Instance.foodObjectsOnScreen--;
     }
 
 }
